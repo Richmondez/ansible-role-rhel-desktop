@@ -1,0 +1,20 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: rhel-desktop
+  author: Aidan Richmond
+  description: Desktop role for Red Hat Enterprise systems.
+  company: "University of Leeds"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+  galaxy_tags:
+    - desktop
+    - rhel
+
+allow_duplicates: true

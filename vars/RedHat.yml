@@ -1,0 +1,3 @@
+---
+rhel_desktop_packages:
+  - "@Server with GUI"

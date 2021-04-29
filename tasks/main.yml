@@ -1,0 +1,21 @@
+---
+# Include variables and define needed variables.
+- name: Include variables.
+  include_vars: "RedHat.yml"
+
+- name: Install the 'Gnome desktop' environment group
+  yum:
+    name: "{{ rhel_desktop_packages }}"
+    state: present
+
+- name: Change default target to graphical.target
+  file:
+    src: /usr/lib/systemd/system/graphical.target
+    dest: /etc/systemd/system/default.target
+    state: link
+
+- name: Install extra packages
+  yum:
+    name: "{{ rhel_desktop_extra_packages }}"
+    state: present
+  when: rhel_desktop_extra_packages is defined

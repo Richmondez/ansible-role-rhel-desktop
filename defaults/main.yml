@@ -1,0 +1,2 @@
+---
+rhel_desktop_packages: ["@Server with GUI", "@Workstation", "@Container Management", "@Development Tools", "@Scientific Support", "@Graphical Administration Tools", "openmpi", "screen"]

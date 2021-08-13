@@ -9,3 +9,24 @@
     src: /usr/lib/systemd/system/graphical.target
     dest: /etc/systemd/system/default.target
     state: link
+
+- name: Copy gdm profile into place.
+  template:
+    src: gdm.j2
+    dest: /etc/dconf/profile/gdm
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Copy gdm config into place.
+  template:
+    src: 00-gdm-config.j2
+    dest: /etc/dconf/db/gdm.d/00-gdm-config
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Run dconf to update database.
+  become: true
+  become_user: root
+  shell: /usr/bin/dconf update

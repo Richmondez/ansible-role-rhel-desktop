@@ -1,0 +1,4 @@
+[org/gnome/login-screen]
+banner-message-text="{{rhel_desktop_gdm_banner_message}}"
+banner-message-enable={% if rhel_desktop_gdm_banner_enabled %}true{% else %}false{% endif %}{{''}}
+disable-user-list={% if rhel_desktop_gdm_userlist_enabled %}false{% else %}true{% endif %}{{''}}
